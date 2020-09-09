@@ -1,10 +1,10 @@
 ﻿  TwoWorlds.cpp
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\WorldData.cpp(51,16): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\WorldData.cpp(81,16): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\WorldData.cpp(86,16): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\WorldData.cpp(90,16): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(20,12): warning C4101: 'rank': unreferenced local variable
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(173,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(359,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(439): warning C4715: 'Boss_Conv': not all control paths return a value
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\WorldData.cpp(71,17): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(23,12): warning C4101: 'rank': unreferenced local variable
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(189,21): warning C4101: 'i': unreferenced local variable
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(239,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(430,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(521,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(522,14): warning C4553: '==': result of expression not used; did you intend '='?
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(510): warning C4715: 'Boss_Conv': not all control paths return a value
   TwoWorlds.vcxproj -> D:\AdvancedC++\TwoWorlds\TwoWorlds\Debug\TwoWorlds.exe

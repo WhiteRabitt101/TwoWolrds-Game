@@ -3,6 +3,7 @@
 #include <string>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h> 
+#include <vector>
 
 
 #include "WorldData.cpp"
@@ -16,7 +17,9 @@ std::string Color();
 
 std::string Numbers();
 std::string Boss_Conv();
-int main() {
+void Attack(Player p_One, Player Op, Items belts);
+int main() 
+{
     double rank;
     char Play;
 
@@ -26,15 +29,32 @@ int main() {
 
 
 
+
     //creating players
     Player System_Mang;
     Player player_One;
 
 
+    // Declare Items  Might not go here??
+
+        // Potions
+    Items health_Pot;
+    health_Pot.W_stats("Health Potion", 55, 100);
+
+        // Weapons
+    Items Sword;
+    Sword.W_stats("Sword", 33, 100);
+    Items Gun;
+    Gun.W_stats("Gun", 66, 100);
+    Items Rocket;
+    Rocket.W_stats("Rocket Launcher", 99, 100);
+
+    Items belt[]= { Sword, Gun, Rocket, health_Pot };
 
 
-    {
 
+
+    
         //introduce yourself
 
         std::cout << "Hey you!\n Yeah you! What is your name?\n";
@@ -68,7 +88,9 @@ int main() {
             std::cout << "Dog:\n Hmmmmm...\n";
 
         };
-        
+
+
+
 
 
 
@@ -108,7 +130,7 @@ int main() {
             }
             std::cin >> choice;
             Game_Choice.setGame(choice);
-            std::cout << "Okay! Let's play " << Game_Choice.get_Game() << "\n \n"; //<<  game_Choice[choice] ; 
+            std::cout << "Okay! Let's play " << Game_Choice.get_Game() << "\n \n";
 
 
             // color game
@@ -142,20 +164,64 @@ int main() {
             }
         } // end else
 
-             
+
           // Introduction to The Boss
         std::cout << "Enjoy the meeting with The Boss____\n\n\n";
         Player The_Boss;
         The_Boss.set_Name("The Boss");
         The_Boss.add_health(100000);
+        The_Boss.add_xp(999900);
 
         std::cout << player_One.get_name() << ":\n Hello Sir, you summoned me? \n\n";
         std::cout << The_Boss.get_name() << ":\n Ahh yes. \n the new recruit " << player_One.get_name() << ", have a seat.\n\n";
         Boss_Conv();
 
+        {
+
+            //just to test Attack function
+            std::cout << " Your being attacked!!\n WHAT DO YOU DO??";
+            std::cout << "\n1: Attack \n2: Run Away\n";
+            std::cin >> choice;
+
+            while(choice == 1)
+            {
+                int Wp_Choice;
+                int i;
+                std::cout << "Choose your Weapon: \n";
+                for (int i = 0; i < 4 ; i++)
+                {
+                    std::cout << i << " : " << belt[i].get_Name() << "\n";
+                }
+                std::cin >> Wp_Choice;
+                if (Wp_Choice == 3)
+                {
+                    std::cout << "You used a health Potion!\n Health +55\n";
+                    player_One.add_health(55);
+                    
+                    
+                }
+                else
+                {
+                    Attack(player_One, The_Boss, belt[Wp_Choice]);
+                }
+                std::cout << "\n Would you like to attack again?\n";
+                std::cin >> choice;
+
+
+
+                // Attack(player_One, The_Boss, belt[i]);
+            }
+            if (choice == 2)
+            {
+                std::cout << "/n RUNN FOREST RUNN!!!\n";
+            }
+
+            std::cout << "HOLDD THE SCREEN\n";
+        }
+
 
         return 0;
-    }
+    
 }
 
 
@@ -397,7 +463,7 @@ std::string Numbers()
     
 
 }
-
+//add PLayer to param
 std::string Boss_Conv()
 {
     Player player_One;
@@ -415,7 +481,7 @@ std::string Boss_Conv()
         player_One.add_xp(10);
         player_One.lower_health(69);
         std::cout << Light_path;
-        std::cout << "health = " << player_One.get_health();
+        std::cout << "health = " << player_One.get_health() << "\n";
         std::cout << "xp ++ = " << player_One.get_xp();
         return Light_path;
     }
@@ -442,3 +508,34 @@ std::string Boss_Conv()
     
   
 }
+
+
+/*
+void Attack(Player p_One, Player Op, Items belts)
+{
+    int damage = belts.get_damage();   
+    //int* dam_ptr{ &damage };
+
+    
+   
+    srand(time(NULL));
+    RAND_MAX == damage;
+    int rand_num = rand() % damage;
+
+
+     Player player_One = p_One;
+     Player Opponent = Op;
+     int Op_Health = Opponent.get_health();
+     std::cout << Opponent.get_name() <<" health : " << Opponent.get_health() << "\n";
+     
+     if (Op_Health != 0)
+     {
+         //Op_Health = Op_Health - Weapons.wp_damage(33);
+         
+         Opponent.lower_health(rand_num);
+         
+     }
+     std::cout << Opponent.get_name() << " health: "; // to test 
+     std::cout << Opponent.get_health() << "\n"; // to test 
+
+}*/

@@ -1,21 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
-class Boss
-{
-private:
-    std::string name{ "The Boss" };
-    int rank{};
-    int health{ 100000 };
-    int xp{ 100000 };
-
-public:
-   
-
-
-
-};
+#include <time.h> 
 
 
 
@@ -26,14 +12,11 @@ private:
     int rank{};
     int health{ 100 };
     int xp{ 100 };
-
-
-
-
+    
 public:
     std::string player_One;
     
-   
+  
 
 
      //creating players
@@ -91,6 +74,43 @@ public:
     {
         return health;
     }
+
+
+    // ADD Attack function
+    // send in Opponent
+    
+    void Attack( Player Op, Items belts)
+    {
+        int damage = belts.get_damage();
+        //int* dam_ptr{ &damage };
+
+
+
+        srand(time(NULL));
+        RAND_MAX == damage;
+        int rand_num = rand() % damage;
+
+
+        Player player_One = p_One;
+        Player Opponent = Op;
+        int Op_Health = Opponent.get_health();
+        std::cout << Opponent.get_name() << " health : " << Opponent.get_health() << "\n";
+
+        if (Op_Health != 0)
+        {
+            //Op_Health = Op_Health - Weapons.wp_damage(33);
+
+            Opponent.lower_health(rand_num);
+
+        }
+        std::cout << Opponent.get_name() << " health: "; // to test 
+        std::cout << Opponent.get_health() << "\n"; // to test 
+
+    }
+
+
+
+    //
 };
 
 class Games
@@ -148,4 +168,61 @@ class Games
 };
 
 
+
+class Items
+{
+    private:
+
+        std::string name;
+        int Power; //dammage that can be delt
+        int w_health;
+
+
+    public:
+        
+            
+      void W_stats(std::string Name, int power, int w_health)
+      {
+          //std::string Name;
+          //int Power; //dammage that can be delt
+          //int wp_health;
+          Power = power;
+          name = Name;
+          
+      };
+      
+      
+
+      std::string get_Name()
+      {
+          return name;
+      }
+
+      int get_damage()
+      {
+          
+          return Power;
+      }
+
+
+
+};
+
+
+
+
+
+/*
+void Weapons:: W_stats(std::string name, int power, int w_health)
+{
+    std::string Name;
+    int Power; //dammage that can be delt
+    int w_health;
+    Name = name;
+    Power = power;
+
+
+};
+
+*/
 
