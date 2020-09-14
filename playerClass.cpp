@@ -25,22 +25,24 @@ Special member functions:
 #include <string>
 
 
-class playerClass
+//constructors
+
+PlayerClass::PlayerClass()
 {
+	playerName = "John";
+	playerRank = 1;
+	playerHealth = 100;
+	playerXp = 0;
+}
 
-	//variables
+PlayerClass::PlayerClass(std::string nameIn, int rankIn, int healthIn, double xpIn)
+{
+	playerName = nameIn;
+	playerRank = rankIn;
+	playerHealth = healthIn;
+	playerXp = xpIn;
+}
 
-	std::string playerName;
-	
-	int playerRank;
-	
-	int playerHealth;
-	
-	double playerXp;
-	
-	
-	
-	
 	//functions
 
 	
@@ -54,18 +56,9 @@ class playerClass
 	
 	
 	
-	void setName(std::string nameIn)
+	void PlayerClass::setName(std::string nameIn)
 	{
-		std::string defaultName = "Rebel";
-
-		
-
-
-		playerName == defaultName;
-	
-	
-	
-	
+		playerName = nameIn;
 	}
 
 
@@ -81,15 +74,7 @@ class playerClass
 
 	std::string getName()
 	{
-		
-
-		std::cout << " Enter your name here:  ";
-			std::cin >> playerName;
-		
-		
 		return  playerName;
-	
-	
 	}
 
 
@@ -102,11 +87,7 @@ class playerClass
 	*/
 	int setRank()
 	{
-		int defaultRank = 1;
-
-		playerRank = defaultRank;
-
-		return playerRank;
+		playerRank = rankIn;
 	
 	}
 
@@ -134,11 +115,9 @@ class playerClass
 
 	
 	*/
-	int setHealth()
+	void setHealth(int healthIn)
 	{
-		playerHealth = 100;
-
-		return playerHealth;
+		playerHealth = healthIn;
 		
 	}
 
@@ -162,11 +141,9 @@ class playerClass
 
 	assuming its a double
 	*/
-	double setXp()
+	int setXp()
 	{
-		playerXp = 0;
-
-		return playerXp;
+		playerXp = xpIn;
 	
 	}
 	/*
@@ -194,4 +171,3 @@ class playerClass
 	
 	
 	}
-}
