@@ -2,22 +2,27 @@
 #include <ostream>
 #include <string>
 #include <stdlib.h>     /* srand, rand */
-#include <time.h> 
+#include <chrono> // for time + delay
+
 #include <vector>
+#include "Items.h"
+#include "Player.h"
+#include "Communications.h"
 
 
-#include "WorldData.cpp"
+
+
 
 //using namespace std;
 
 //prototypes
 
 //bool Game0(double guess );
-std::string Color();
-
-std::string Numbers();
-std::string Boss_Conv();
-void Attack(Player p_One, Player Op, Items belts);
+std::string Color(PlayerClass &player);
+void addItem(Items item);
+std::string Numbers(PlayerClass &player);
+std::string Boss_Conv(PlayerClass &playerOne);
+std::string backStory();
 int main() 
 {
     double rank;
@@ -31,55 +36,71 @@ int main()
 
 
     //creating players
-    Player System_Mang;
-    Player player_One;
+    PlayerClass System_Mang;
+    PlayerClass player_One;
 
 
     // Declare Items  Might not go here??
-
+    /*
         // Potions
     Items health_Pot;
-    health_Pot.W_stats("Health Potion", 55, 100);
+    health_Pot.setItemStats("Health Potion", 55, 100);
 
-        // Weapons
+    // Weapons
     Items Sword;
-    Sword.W_stats("Sword", 33, 100);
+    Sword.setItemStats("Sword", 33, 100);
     Items Gun;
-    Gun.W_stats("Gun", 66, 100);
+    Gun.setItemStats("Gun", 66, 100);
     Items Rocket;
-    Rocket.W_stats("Rocket Launcher", 99, 100);
+    Rocket.setItemStats("Rocket Launcher", 99, 100);
 
-    Items belt[]= { Sword, Gun, Rocket, health_Pot };
-
-
-
-
+    */
     
-        //introduce yourself
 
-        std::cout << "Hey you!\n Yeah you! What is your name?\n";
+
+
+        // Little Background story to paint the picture
+
+
+   
+          backStory();
+
+        //Start of Game
+   
+
+
+    std::cout << "Hey you!\n ";
+    std::chrono::steady_clock::time_point tend = std::chrono::steady_clock::now()
+        + std::chrono::seconds(2);           
+    while (std::chrono::steady_clock::now() < tend)
+    {
+        std::cout << "\n";
+    }
+    std::cout << " Yeah you! What is your name?\n";
+    
+       
         std::cin >> name;
-        player_One.set_Name(name);
+        player_One.setName(name);
 
         //  System says Hello
-        System_Mang.set_Name("Dog");
-        System_Mang.add_health(1000000000);
-        System_Mang.add_xp(1000000000);
-        std::cout << player_One.get_name() << "Dog:\n it's a pleasure to meet you.\n They call me " << System_Mang.get_name() << "\n";
+        System_Mang.setName("Dog");
+        System_Mang.addHealth(1000000000);
+        System_Mang.addXp(1000000000);
+        std::cout << player_One.getName() << "\n Dog:\n it's a pleasure to meet you.\n They call me " << System_Mang.getName() << "\n";
 
 
         //  Ask rank
         // would like to add a "pause", but so far couldn't get it to work
-        player_One.set_rank(4);
-        std::cout << "\nI see your a level " << player_One.get_rank() << ".. \nSo you must be the new recruit everyone has been talking about.\n Considering that The Boss wants to see you.\n";
+        player_One.setRank(1);
+        std::cout << "\nDog:" "\nSo you must be the new recruit everyone has been talking about.\n Considering that The Boss wants to see you.\n";
         int reply;
-        std::cout << player_One.get_name() << ":\n 1: Mind your own buisness \n 2: People are talking about me?\n 3: Look at them and remain silent \n";
+        std::cout << player_One.getName() << ":\n 1: Mind your own buisness \n 2: People are talking about me?\n 3: Look at them and remain silent \n";
         std::cin >> reply;
 
         if (reply != 1)
         {
-            player_One.add_xp(5);
-            player_One.add_health(5);
+            player_One.addXp(5);
+            player_One.addHealth(5);
 
             std::cout << "Xp + 5\n Health +5\n";
         }
@@ -95,13 +116,13 @@ int main()
 
 
         //game starter
-        std::cout << "So " << player_One.get_name();
+        std::cout << "So\n " << player_One.getName();
         // add "pause"
         std::cout << " Would you like to play a game while we wait for the Boss?? (Y/N)\n";
         std::cin >> Play;
         while (Play != 'Y' && Play != 'y' && Play != 'N' && Play != 'n' && Play != 'L' && Play != 'l')
         {
-            std::cout << "Come on now " << player_One.get_name() << " how can you be The One everyone is whispering about if you can't even follow directions? haha\n";
+            std::cout << "Come on now " << player_One.getName() << " how can you be The One everyone is whispering about if you can't even follow directions? haha\n";
             std::cout << " Simple ""Y"" for Yes, or ""N"" for No (Y/N)\n";
             std::cin >> Play;
         }
@@ -123,29 +144,29 @@ int main()
             //Game initz
             std::string game_Choice[3] = { "Color ", "Guessing ", "Higher or Lower" };
 
-            Games Game_Choice;
+           
 
             for (int i = 0; i < 3; i++) {
                 std::cout << i << " = " << game_Choice[i];
             }
             std::cin >> choice;
-            Game_Choice.setGame(choice);
-            std::cout << "Okay! Let's play " << Game_Choice.get_Game() << "\n \n";
+            
+            std::cout << "Okay! Let's play " << game_Choice[choice] << "\n \n";
 
 
             // color game
             if (choice == 0)
             {
-                std::cout << Color();
+                std::cout << Color(player_One);
             }
 
             // Number game
 
             if (choice == 1)
             {
-                std::cout << Numbers();
+                std::cout << Numbers(player_One);
             }
-            player_One.add_xp(10);// xp bonus for playing gaem
+            player_One.addXp(10);// xp bonus for playing gaem
         } // End Playing Game
 
           // Choicing to Not Play a Game
@@ -166,15 +187,21 @@ int main()
 
 
           // Introduction to The Boss
-        std::cout << "Enjoy the meeting with The Boss____\n\n\n";
-        Player The_Boss;
-        The_Boss.set_Name("The Boss");
-        The_Boss.add_health(100000);
-        The_Boss.add_xp(999900);
+        std::cout << "\nDog:\nEnjoy the meeting with The Boss____\n\n\n";
+        
+        // Added this to test the addItem function
+        std::cout << "Take this Sword";
+        player_One.addItem(player_One, belt, Sword);
+       
+        
+        PlayerClass The_Boss;
+        The_Boss.setName("The Boss");
+        The_Boss.setHealth(100000);
+        The_Boss.setXP(999900);
 
-        std::cout << player_One.get_name() << ":\n Hello Sir, you summoned me? \n\n";
-        std::cout << The_Boss.get_name() << ":\n Ahh yes. \n the new recruit " << player_One.get_name() << ", have a seat.\n\n";
-        Boss_Conv();
+        std::cout << player_One.getName() << ":\n Hello Sir, you summoned me? \n\n";
+        std::cout << The_Boss.getName() << ":\n Ahh yes. \n the new recruit " << player_One.getName() << ", have a seat.\n\n";
+        Boss_Conv(player_One);
 
         {
 
@@ -183,26 +210,26 @@ int main()
             std::cout << "\n1: Attack \n2: Run Away\n";
             std::cin >> choice;
 
-            while(choice == 1)
+            while(choice = 1)
             {
                 int Wp_Choice;
                 int i;
                 std::cout << "Choose your Weapon: \n";
                 for (int i = 0; i < 4 ; i++)
                 {
-                    std::cout << i << " : " << belt[i].get_Name() << "\n";
+                    std::cout << i << " : " << belt[i].getName() << "\n";
                 }
                 std::cin >> Wp_Choice;
                 if (Wp_Choice == 3)
                 {
                     std::cout << "You used a health Potion!\n Health +55\n";
-                    player_One.add_health(55);
+                    player_One.addHealth(55);
                     
                     
                 }
                 else
                 {
-                    Attack(player_One, The_Boss, belt[Wp_Choice]);
+                 player_One.Attack(The_Boss, belt[Wp_Choice]);
                 }
                 std::cout << "\n Would you like to attack again?\n";
                 std::cin >> choice;
@@ -217,6 +244,7 @@ int main()
             }
 
             std::cout << "HOLDD THE SCREEN\n";
+            
         }
 
 
@@ -228,10 +256,10 @@ int main()
 //Functions 
 
     // COLOR GUESSING GAME
-std::string Color()//std::string color_gues)//, std::string color)
+std::string Color(PlayerClass &player)//std::string color_gues)//, std::string color)
 {
     
-    Player player_One;
+    
     std::string Color;
     std::string Color_Gues;
     std::string end = { " \n Wasn't that fun?? :D\n" };
@@ -271,7 +299,7 @@ std::string Color()//std::string color_gues)//, std::string color)
         
             if (Color == Color_Gues)
             {
-                player_One.add_health(5);
+                player.addHealth(5);
                 std::cout << "\n Way to go my friend. You got it! :P \n\n";
                 return end;
             }
@@ -305,7 +333,7 @@ std::string Color()//std::string color_gues)//, std::string color)
             }
             if (Color == Color_Gues)
             {
-                player_One.add_health(5);
+                player.addHealth(5);
                 std::cout << " Nice! You got it  :)\n\n";
                 return end;
             }
@@ -338,7 +366,7 @@ std::string Color()//std::string color_gues)//, std::string color)
             }
              if (Color_Gues == Color)
             {
-                 player_One.add_health(5);
+                 player.addHealth(5);
                 std::cout << "Way to go my friend! Thats correct :)\n\n";
                 return end;
             
@@ -371,7 +399,7 @@ std::string Color()//std::string color_gues)//, std::string color)
             }
             if (Color == Color_Gues)
             {
-                player_One.add_health(5);
+                player.addHealth(5);
                 std::cout << "Way to go my friend! Thats correct :)";
                 return end;
             }
@@ -404,7 +432,7 @@ std::string Color()//std::string color_gues)//, std::string color)
             }
             else if (Color == Color_Gues)
             {
-                player_One.add_health(5);
+                player.addHealth(5);
                 std::cout << "Way to go my friend! Thats correct :D";
                 return end;
             }
@@ -419,14 +447,14 @@ std::string Color()//std::string color_gues)//, std::string color)
 
 
 // Numbers Game
-std::string Numbers()
+std::string Numbers(PlayerClass &player)
 {
     
     std::string win{ " Congrats. That was fun!\n" };
     std::string lose{ " Close, but no cigar\n Wasn't that fun?!\n" };
     int num_gues;
 
-    Player player_One;
+    
     srand(time(NULL));
     RAND_MAX == 10;
 
@@ -441,8 +469,8 @@ std::string Numbers()
         if (num == num_gues)
         {
             std::cout << "Way to go you got it!\n";
-            player_One.add_xp(10);
-            std::cout << "xp ++ = " << player_One.get_xp();           
+            player.addXp(10);
+            std::cout << "xp ++ = " << player.getXP();           
             return win;
         }
         i++;
@@ -463,39 +491,43 @@ std::string Numbers()
     
 
 }
+
+
+//old boss convo senerio
+/*  // MOVING TO COMMUNICATIONS.CPP :)
 //add PLayer to param
-std::string Boss_Conv()
+std::string Boss_Conv( PlayerClass &playerOne)
 {
-    Player player_One;
+    
     std::string Light_path{ "The Boss:\nYou better watch your self!\n" };
     std::string Dark_path{ "The Boss:\nYour right it would be! I take care of my people. \nAs long as they fall in line of course..\n" };
     std::string Neutral_path{ "The Boss:\nTaking it all in I see, I like that.\n" };
     int reply;
     
   
-    std::cout << player_One.get_name() << " I hear your exelling quite fast compaired to your commrads.\n If you keep it up, you might get promoted to one of my inner circles\n\n";
+    std::cout << playerOne.getName() << " I hear your exelling quite fast compaired to your commrads.\n If you keep it up, you might get promoted to one of my inner circles\n\n";
     std::cout << "1: ""Laugh out loud""\n" << "2: ""Thank you Sir! That would be a major honor!""\n" << "3: ""sit in silience""\n";
     std::cin >> reply;
     if (reply == 1)
     {
-        player_One.add_xp(10);
-        player_One.lower_health(69);
+        playerOne.addXp(10);
+        playerOne.lowerHealth(69);
         std::cout << Light_path;
-        std::cout << "health = " << player_One.get_health() << "\n";
-        std::cout << "xp ++ = " << player_One.get_xp();
+        std::cout << "health = " << playerOne.getHealth() << "\n";
+        std::cout << "xp ++ = " << playerOne.getXP();
         return Light_path;
     }
     else if (reply == 2)
     {
-        player_One.add_xp(10);
+        playerOne.addXp(10);
         std::cout << Dark_path;
-        std::cout << "\n \n xp ++ = " << player_One.get_xp();
+        std::cout << "\n \n xp ++ = " << playerOne.getXP();
         return Dark_path;
     }
     else if (reply == 3)
     {
-        player_One.add_health(10);
-        player_One.add_xp(5);
+        playerOne.addHealth(10);
+        playerOne.addXp(5);
         std::cout << Neutral_path;
         return Neutral_path;
     }
@@ -509,33 +541,4 @@ std::string Boss_Conv()
   
 }
 
-
-/*
-void Attack(Player p_One, Player Op, Items belts)
-{
-    int damage = belts.get_damage();   
-    //int* dam_ptr{ &damage };
-
-    
-   
-    srand(time(NULL));
-    RAND_MAX == damage;
-    int rand_num = rand() % damage;
-
-
-     Player player_One = p_One;
-     Player Opponent = Op;
-     int Op_Health = Opponent.get_health();
-     std::cout << Opponent.get_name() <<" health : " << Opponent.get_health() << "\n";
-     
-     if (Op_Health != 0)
-     {
-         //Op_Health = Op_Health - Weapons.wp_damage(33);
-         
-         Opponent.lower_health(rand_num);
-         
-     }
-     std::cout << Opponent.get_name() << " health: "; // to test 
-     std::cout << Opponent.get_health() << "\n"; // to test 
-
-}*/
+*/

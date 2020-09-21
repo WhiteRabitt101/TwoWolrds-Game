@@ -147,8 +147,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Communications.cpp" />
+    <ClCompile Include="Items.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="TwoWorlds.cpp" />
-    <ClCompile Include="WorldData.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Communications.h" />
+    <ClInclude Include="Items.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

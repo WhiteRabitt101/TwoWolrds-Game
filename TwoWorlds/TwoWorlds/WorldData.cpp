@@ -1,7 +1,14 @@
+#ifndef WORLDDATA_CPP
+#define WORLDDATA_CPP
+
+
 #include <iostream>
 #include <string>
 #include <vector>
 #include <time.h> 
+#include "Items.h"
+
+
 
 
 
@@ -91,7 +98,7 @@ public:
         int rand_num = rand() % damage;
 
 
-        Player player_One = p_One;
+        
         Player Opponent = Op;
         int Op_Health = Opponent.get_health();
         std::cout << Opponent.get_name() << " health : " << Opponent.get_health() << "\n";
@@ -169,60 +176,4 @@ class Games
 
 
 
-class Items
-{
-    private:
-
-        std::string name;
-        int Power; //dammage that can be delt
-        int w_health;
-
-
-    public:
-        
-            
-      void W_stats(std::string Name, int power, int w_health)
-      {
-          //std::string Name;
-          //int Power; //dammage that can be delt
-          //int wp_health;
-          Power = power;
-          name = Name;
-          
-      };
-      
-      
-
-      std::string get_Name()
-      {
-          return name;
-      }
-
-      int get_damage()
-      {
-          
-          return Power;
-      }
-
-
-
-};
-
-
-
-
-
-/*
-void Weapons:: W_stats(std::string name, int power, int w_health)
-{
-    std::string Name;
-    int Power; //dammage that can be delt
-    int w_health;
-    Name = name;
-    Power = power;
-
-
-};
-
-*/
-
+#endif // !WORLDDATA_CPP
