@@ -22,7 +22,7 @@ private:
 
 	double playerXp;
 
-	Items belt[5];
+	Items belt[MAX_ITEMS];
 
 public:
 
@@ -50,8 +50,10 @@ public:
 	void lowerHealth(int healthin) { playerHealth = playerHealth - healthin; };
 
 	void addItem(Items item);
+	void listItems(Items belt[]);
+	
 
-	void  Attack(PlayerClass &Op, Items belts);
+	void Attack(PlayerClass& Op);
 	/*
 * Meant to allow you to check
 * your info, in this case i just made a print statement

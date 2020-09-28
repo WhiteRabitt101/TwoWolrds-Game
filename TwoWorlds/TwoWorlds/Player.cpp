@@ -13,7 +13,7 @@ Special member functions:
 
  heal another player
 /*/
-
+#include <ostream>
 #include <iostream>
 #include <string>
 #include "Player.h"
@@ -44,49 +44,97 @@ PlayerClass::PlayerClass(std::string nameIn, int rankIn, int healthIn, double xp
 //functions
 
 // Add Item to Belt
-void PlayerClass::addItem( Items item) {
+void PlayerClass::addItem(Items item) {
+    // add items to players belt
+     belt[1]= item;
+    std::cout << " \nAdded " << item.getName() << " to belt\n";
+
+     
+
+
     
     
-    for(int i=0; i<MAX_ITEMS; i++)
+    
+}
+
+void PlayerClass:: listItems(Items belt[])
+{
+    for (int i = 0; i < MAX_ITEMS; i++)
     {
-        belt[i] = item;
+        std::cout << i << " : " << &belt[i] << "\n";
     }
-    
 }
 
 
 
 
 
-
 //   ATTACK FUNCTION 
-void PlayerClass::Attack(PlayerClass &Op, Items belts)
+void PlayerClass::Attack(PlayerClass& Op)
 {
-    int damage = belts.getDamage();
+    int damage;
+    int choice;
+    bool bOpIsAlive = true;
     //int* dam_ptr{ &damage };
 
-
-
-    srand(time(NULL));
-    RAND_MAX == damage;
-    int rand_num = rand() % damage;
-
-
-	//Op.getHealth();   might not need
-    
-  //  int Op_Health = Op.getHealth(); might not need
-    std::cout << Op.getName() << " health : " << Op.getHealth() << "\n";
-
-    if (Op.getHealth() != 0)
+    std::cout << " Your being attacked!!\n WHAT DO YOU DO??";
+    std::cout << "\n1: Attack \n2: Run Away\n";
+    std::cin >> choice;
+    while (choice == 1 && bOpIsAlive)
     {
-        //Op_Health = Op_Health - Weapons.wp_damage(33);
 
-        Op.lowerHealth(rand_num);
+        int Wp_Choice;
+        std::cout << "Choose your Weapon: \n";
+        for (int i = 0; i < 4; i++)
+        {
+            std::cout << i << " : " << belt[i].listItems() << "\n";
+        }
+      
+        std::cin >> Wp_Choice;
+        damage = belt[Wp_Choice].getDamage(); // gets the damage of choosen weapon
 
-    }
-    std::cout << Op.getName() <<"'s "<< " health: "; // to test 
-    std::cout << Op.getHealth() << "\n"; // to test 
 
+        srand(time(NULL));
+        RAND_MAX == damage;
+        int rand_num = rand() % damage;
+
+
+        //Op.getHealth();   might not need
+
+      //  int Op_Health = Op.getHealth(); might not need
+        std::cout << Op.getName() << " health : " << Op.getHealth() << "\n";
+
+        if (Op.getHealth() >= 0)
+        {
+            //Op_Health = Op_Health - Weapons.wp_damage(33);
+
+            Op.lowerHealth(rand_num);
+            if (Op.playerHealth < 0)
+            {
+                bOpIsAlive = false;
+                std::cout << "Opponent is defeated \n ";
+            }
+            else
+            {
+                std::cout << Op.getName() << "'s " << " health: "; // to test 
+                std::cout << Op.getHealth() << "\n\n"; // to test 
+                std::cout << " Would you like to attack again or run??";
+                std::cout << "\n1: Attack \n2: Run Away\n";
+                std::cin >> choice;
+            }
+        }
+
+        else {
+
+            addXp(10);
+            std::cout << "You defeated " << Op.getName();
+
+        }
+        if (choice == 2)
+        {
+            std::cout << "/n RUNN FOREST RUNN!!!\n";
+        }
+    } // end while (choice == 1)
 }
 
 

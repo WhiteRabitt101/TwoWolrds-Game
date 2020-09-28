@@ -1,26 +1,9 @@
-﻿  Communications.cpp
-  Items.cpp
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(25,12): error C3646: 'belt': unknown override specifier
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(25,12): error C2143: syntax error: missing ',' before '['
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(25,15): error C2143: syntax error: missing ')' before ';'
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(25,15): error C2238: unexpected token(s) preceding ';'
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(52,21): error C2061: syntax error: identifier 'Items'
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(54,38): error C2061: syntax error: identifier 'Items'
-  Player.cpp
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.cpp(70,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.cpp(71,14): warning C4553: '==': result of expression not used; did you intend '='?
+﻿  Player.cpp
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.cpp(97,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.cpp(98,18): warning C4553: '==': result of expression not used; did you intend '='?
   TwoWorlds.cpp
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(25,12): error C3646: 'belt': unknown override specifier
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(25,12): error C2143: syntax error: missing ',' before '['
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(25,15): error C2143: syntax error: missing ')' before ';'
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(25,15): error C2238: unexpected token(s) preceding ';'
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(52,21): error C2061: syntax error: identifier 'Items'
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.h(54,38): error C2061: syntax error: identifier 'Items'
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(194,40): error C2065: 'belt': undeclared identifier
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(194,46): error C2065: 'Sword': undeclared identifier
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(220,48): error C2065: 'belt': undeclared identifier
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(232,46): error C2065: 'belt': undeclared identifier
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(267,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(458,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(28,12): warning C4101: 'rank': unreferenced local variable
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(240,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(431,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Generating Code...
-D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Communications.cpp(80): warning C4715: 'Boss_Conv': not all control paths return a value
+  TwoWorlds.vcxproj -> D:\AdvancedC++\TwoWorlds\TwoWorlds\Debug\TwoWorlds.exe

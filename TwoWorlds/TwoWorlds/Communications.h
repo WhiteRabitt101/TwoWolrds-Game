@@ -4,7 +4,7 @@
 #include <iostream>
 
 #include "Player.h"
-
+// Make into text file
 class Communicate
 {
 private:

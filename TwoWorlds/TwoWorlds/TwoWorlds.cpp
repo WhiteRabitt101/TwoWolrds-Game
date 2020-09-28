@@ -19,7 +19,7 @@
 
 //bool Game0(double guess );
 std::string Color(PlayerClass &player);
-void addItem(Items item);
+//void addItem(Items item);
 std::string Numbers(PlayerClass &player);
 std::string Boss_Conv(PlayerClass &playerOne);
 std::string backStory();
@@ -41,7 +41,7 @@ int main()
 
 
     // Declare Items  Might not go here??
-    /*
+    
         // Potions
     Items health_Pot;
     health_Pot.setItemStats("Health Potion", 55, 100);
@@ -54,8 +54,8 @@ int main()
     Items Rocket;
     Rocket.setItemStats("Rocket Launcher", 99, 100);
 
-    */
-    
+   //Items belt[MAX_ITEMS];
+   
 
 
 
@@ -191,7 +191,7 @@ int main()
         
         // Added this to test the addItem function
         std::cout << "Take this Sword";
-        player_One.addItem(player_One, belt, Sword);
+        player_One.addItem( Sword);
        
         
         PlayerClass The_Boss;
@@ -203,49 +203,22 @@ int main()
         std::cout << The_Boss.getName() << ":\n Ahh yes. \n the new recruit " << player_One.getName() << ", have a seat.\n\n";
         Boss_Conv(player_One);
 
-        {
+        
 
             //just to test Attack function
-            std::cout << " Your being attacked!!\n WHAT DO YOU DO??";
-            std::cout << "\n1: Attack \n2: Run Away\n";
-            std::cin >> choice;
-
-            while(choice = 1)
-            {
-                int Wp_Choice;
-                int i;
-                std::cout << "Choose your Weapon: \n";
-                for (int i = 0; i < 4 ; i++)
-                {
-                    std::cout << i << " : " << belt[i].getName() << "\n";
-                }
-                std::cin >> Wp_Choice;
-                if (Wp_Choice == 3)
-                {
-                    std::cout << "You used a health Potion!\n Health +55\n";
-                    player_One.addHealth(55);
-                    
-                    
-                }
-                else
-                {
-                 player_One.Attack(The_Boss, belt[Wp_Choice]);
-                }
-                std::cout << "\n Would you like to attack again?\n";
-                std::cin >> choice;
-
+           
+                 player_One.Attack(The_Boss);
+                
+                
 
 
                 // Attack(player_One, The_Boss, belt[i]);
-            }
-            if (choice == 2)
-            {
-                std::cout << "/n RUNN FOREST RUNN!!!\n";
-            }
+            
+            
 
             std::cout << "HOLDD THE SCREEN\n";
             
-        }
+        
 
 
         return 0;

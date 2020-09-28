@@ -4,7 +4,8 @@
 #include <time.h> 
 
 #include "Items.h"
-#include "Player.h"
+#include "Constants.h"
+//#include "Player.h"
 
 
 
@@ -18,7 +19,8 @@
         name = Name;
 
     };
-    
+   Items belt[MAX_ITEMS];
+   
 
     
 

@@ -154,6 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Communications.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="Items.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
