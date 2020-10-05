@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 #include <string>
@@ -6,5 +7,4 @@
 
 
 const int MAX_ITEMS = 5;
-
 #endif

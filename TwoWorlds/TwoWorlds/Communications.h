@@ -1,26 +1,26 @@
+#pragma once
 #ifndef COMMUNICATIONS_H
 #define COMMUNICATIONS_H
 #include <string>
 #include <iostream>
 
 #include "Player.h"
-// Make into text file
-class Communicate
-{
-private:
+
+//contains protypes for the communications cpp functions
 
 
 
-public:
-
-	std::string backStory();
-	std::string Boss_Conv(PlayerClass &playerOne);
 
 
-};
+
+
+	void backStory();
+	std::string Boss_Conv(PlayerClass& playerOne);
+	void starterConvo(PlayerClass& player_One, PlayerClass& System_Mang);
+	void colorGameConvo(PlayerClass& player_One);
+	void bossIntroConvo(PlayerClass& player_One,PlayerClass The_Boss);
 
 
 
 
 #endif
-

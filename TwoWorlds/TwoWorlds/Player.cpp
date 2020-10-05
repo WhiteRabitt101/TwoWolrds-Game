@@ -8,9 +8,7 @@ setRank, getRank, setHealth, getHealth, setXp, getXp,
 void printPlayerInfo() const;
 Special member functions:
  attack
-
  add rank
-
  heal another player
 /*/
 #include <ostream>
@@ -27,18 +25,18 @@ Special member functions:
 
 PlayerClass::PlayerClass()
 {
-	playerName = "John";
-	playerRank = 1;
-	playerHealth = 100;
-	playerXp = 0;
+    playerName = "John";
+    playerRank = 1;
+    playerHealth = 100;
+    playerXp = 0;
 }
 
 PlayerClass::PlayerClass(std::string nameIn, int rankIn, int healthIn, double xpIn)
 {
-	playerName = nameIn;
-	playerRank = rankIn;
-	playerHealth = healthIn;
-	playerXp = xpIn;
+    playerName = nameIn;
+    playerRank = rankIn;
+    playerHealth = healthIn;
+    playerXp = xpIn;
 }
 
 //functions
@@ -46,18 +44,18 @@ PlayerClass::PlayerClass(std::string nameIn, int rankIn, int healthIn, double xp
 // Add Item to Belt
 void PlayerClass::addItem(Items item) {
     // add items to players belt
-     belt[1]= item;
+    belt[1] = item;
     std::cout << " \nAdded " << item.getName() << " to belt\n";
 
-     
 
 
-    
-    
-    
+
+
+
+
 }
 
-void PlayerClass:: listItems(Items belt[])
+void PlayerClass::listItems(Items belt[])
 {
     for (int i = 0; i < MAX_ITEMS; i++)
     {
@@ -89,7 +87,7 @@ void PlayerClass::Attack(PlayerClass& Op)
         {
             std::cout << i << " : " << belt[i].listItems() << "\n";
         }
-      
+
         std::cin >> Wp_Choice;
         damage = belt[Wp_Choice].getDamage(); // gets the damage of choosen weapon
 
@@ -143,7 +141,6 @@ Although i'm not sure, i think the purpose of setName is to give a default name 
 here we have default name defined as a string rebel,
 in the case that the player does not choose a name they can choose
 the default
-
 */
 
 
@@ -179,14 +176,11 @@ so for now just return playerRank
 /*
 I'm just setting a way to revert health back to a default,
 i'm assuming default health is 100
-
 */
 
 
 /*
-
 A function to return the current health
-
 */
 
 
@@ -205,12 +199,6 @@ assuming its a double
 /*
 double getXp()
 {
-	return playerXp;
-
+    return playerXp;
 }
 */
-
-
-
-
-

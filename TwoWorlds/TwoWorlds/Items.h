@@ -16,7 +16,7 @@ private:
     int w_health;
 
 public:
-    
+
     std::string listItems() { return name; };
     void setItemStats(std::string Name, int power, int w_health);
     std::string getName() { return name; };
@@ -26,9 +26,3 @@ public:
 
 
 #endif // !ITEMS_H
-
-
-
-
-
-

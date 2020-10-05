@@ -10,17 +10,13 @@
 
 
 // setting values of items
-    void Items::setItemStats(std::string Name, int power, int w_health)
-    {
-        //std::string Name;
-        //int Power; //dammage that can be delt
-        //int wp_health;
-        Power = power;
-        name = Name;
+void Items::setItemStats(std::string Name, int power, int w_health)
+{
+    //std::string Name;
+    //int Power; //dammage that can be delt
+    //int wp_health;
+    Power = power;
+    name = Name;
 
-    };
-   Items belt[MAX_ITEMS];
-   
-
-    
-
+};
+//Items belt[MAX_ITEMS];
