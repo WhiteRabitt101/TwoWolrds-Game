@@ -1,0 +1,15 @@
+﻿  Communications.cpp
+C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\Communications.cpp(307,17): warning C4101: 'i': unreferenced local variable
+  Player.cpp
+C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\Player.cpp(95,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\Player.cpp(96,18): warning C4553: '==': result of expression not used; did you intend '='?
+  TwoWorlds.cpp
+C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\TwoWorlds.cpp(34,9): warning C4101: 'choice': unreferenced local variable
+C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\TwoWorlds.cpp(32,10): warning C4101: 'Play': unreferenced local variable
+C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\TwoWorlds.cpp(31,12): warning C4101: 'rank': unreferenced local variable
+  games.cpp
+C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\games.cpp(50,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\games.cpp(249,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\Communications.cpp(111): warning C4715: 'Boss_Conv': not all control paths return a value
+  Two-Worlds 09-21-jack.vcxproj -> C:\Users\jackc\source\repos\Two-Worlds 09-21-jack\Debug\Two-Worlds 09-21-jack.exe

@@ -1,0 +1,4 @@
+﻿  Player.cpp
+D:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Player.cpp(106,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Player.cpp(107,18): warning C4553: '==': result of expression not used; did you intend '='?
+  TwoWorlds.vcxproj -> D:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\x64\Debug\TwoWorlds.exe

@@ -1,0 +1,9 @@
+﻿  Player.cpp
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.cpp(97,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\Player.cpp(98,18): warning C4553: '==': result of expression not used; did you intend '='?
+  TwoWorlds.cpp
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(28,12): warning C4101: 'rank': unreferenced local variable
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(240,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\AdvancedC++\TwoWorlds\TwoWorlds\TwoWorlds\TwoWorlds.cpp(431,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  TwoWorlds.vcxproj -> D:\AdvancedC++\TwoWorlds\TwoWorlds\Debug\TwoWorlds.exe
