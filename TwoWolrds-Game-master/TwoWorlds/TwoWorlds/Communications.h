@@ -19,8 +19,7 @@
 	void starterConvo(PlayerClass& player_One, PlayerClass& System_Mang);
 	void colorGameConvo(PlayerClass& player_One);
 	void bossIntroConvo(PlayerClass& player_One,PlayerClass The_Boss);
+	void firstFriendConvo(PlayerClass& player_One, PlayerClass& Friend);
 
-
-
-
+	
 #endif

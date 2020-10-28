@@ -1,4 +1,9 @@
-﻿  Player.cpp
-D:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Player.cpp(106,19): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Player.cpp(107,18): warning C4553: '==': result of expression not used; did you intend '='?
-  TwoWorlds.vcxproj -> D:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\x64\Debug\TwoWorlds.exe
+﻿  Communications.cpp
+E:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Player.h(56,25): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+E:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Communications.cpp(178,67): warning C4305: 'argument': truncation from '__int64' to 'int'
+E:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Communications.cpp(178,55): warning C4309: 'argument': truncation of constant value
+E:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Communications.cpp(212,67): warning C4305: 'argument': truncation from '__int64' to 'int'
+E:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Communications.cpp(212,55): warning C4309: 'argument': truncation of constant value
+E:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Communications.cpp(367,9): warning C4101: 'choice': unreferenced local variable
+E:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\TwoWorlds\Communications.cpp(158): warning C4715: 'Boss_Conv': not all control paths return a value
+  TwoWorlds.vcxproj -> E:\AdvancedC++\TwoWolrds-Game-master\TwoWorlds\x64\Debug\TwoWorlds.exe

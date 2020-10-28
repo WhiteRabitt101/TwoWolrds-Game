@@ -28,21 +28,21 @@
 int main()
 {
 
-    double rank;
-    char Play;
+    //double rank;
+    //char Play;
 
-    int choice;
-    std::string name;
-    std::string system_Name;
+   // int choice;
+   // std::string name;
+   // std::string system_Name;
 
-
+    
 
 
     //creating players
-    PlayerClass System_Mang;
+    PlayerClass SystemMan("DOg", 100, 1000, 100,0);
     PlayerClass player_One;
-    PlayerClass The_Boss("The Boss", 100, 100, 100);
-
+    PlayerClass The_Boss("The Boss", 100, 100, 100,100000000);
+    PlayerClass Friend("Best_Friend", 2, 100, 0,100);
 
     // Declare Items  Might not go here??
     /*
@@ -67,16 +67,15 @@ int main()
     //calls the back story function from Communications
 
     backStory();
-
-
-
+  
+    
+    
     //Start of Game
 
 
     //initial conversation
 
-
-    starterConvo(player_One, System_Mang);
+    starterConvo(player_One, SystemMan);
 
 
 
@@ -86,7 +85,11 @@ int main()
     colorGameConvo(player_One);
 
 
+   
     bossIntroConvo(player_One,The_Boss);
+
+
+    firstFriendConvo(player_One, Friend);
 
 
     //Functions 
